@@ -1,0 +1,19 @@
+# {{ basics.name }}
+
+### {{ basics.label }}
+
+[ {{ basics.email }} ](mailto:{{ basics.email }})<br>
+{{ basics.phone }}<br>
+[ {{ basics.website }} ]( {{ basics.website }} )<br><br>
+{% for profile in basics.profiles %}
+{{ profile.network }}: [\@{{ profile.username }}]({{ profile.url }})
+{% endfor %}
+
+## Experience
+{% for job in work %}
+#### {{ job.company }}<br>
+_{{ job.position }},_ {{ job.startDate[:job.startDate.index("-")] }}—{{ job.endDate[:job.endDate.index("-")] }}
+{% for highlight in job.highlights %}
+- {{ highlight }}
+{% endfor %}
+{% endfor %}
