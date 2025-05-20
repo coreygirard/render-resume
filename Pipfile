@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 jsonresume-validator = "*"
 "jinja2" = "*"
+colander = "==1.7.0"
 
 [dev-packages]
 
